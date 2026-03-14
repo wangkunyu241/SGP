@@ -1,0 +1,9 @@
+timm
+wget
+gdown
+iopath
+yacs
+numpy==1.19.5
+scipy
+pandas
+opencv-python
