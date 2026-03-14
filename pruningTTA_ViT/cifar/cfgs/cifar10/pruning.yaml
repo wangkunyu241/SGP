@@ -1,0 +1,45 @@
+MODEL:
+  ADAPTATION: pruning
+  ARCH: Standard_VITB
+TEST:
+  BATCH_SIZE: 64
+CORRUPTION:
+  DATASET: cifar10
+  SEVERITY:
+    - 5
+  TYPE:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - defocus_blur
+    - glass_blur
+    - motion_blur
+    - zoom_blur
+    - snow
+    - frost
+    - fog
+    - brightness
+    - contrast
+    - elastic_transform
+    - pixelate
+    - jpeg_compression
+OPTIM:
+  METHOD: Adam
+  STEPS: 1
+  BETA: 0.9
+  LR: 1e-3
+  WD: 0.
+OPTIM:
+  METHOD: Adam
+  STEPS: 1
+  BETA: 0.9
+  LR: 2e-3
+  WD: 0.
+PRUNING:
+  LAMDA_STD: 1.4
+  LAMDA_ALIGN: 1.6
+  MARGIN: 1.3
+  RATE: 0.2
+  LAMDA_SPARSE: 3e-2
+  THRESHOLD: 0.01
+  LR: 7e-3
